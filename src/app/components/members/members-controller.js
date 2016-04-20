@@ -7,7 +7,7 @@ MembersCtrl.$inject = ['memberSvcs'];
 function MembersCtrl(memberSvcs) {
   var vm = this;
   
-  vm.showOne = true;
+  vm.showOne = false;
   vm.loading = true;
   
   // Popular users are users with more than 1 match
@@ -74,12 +74,14 @@ function MembersCtrl(memberSvcs) {
   
   vm.getOne = function(id) {
     vm.loading = true;
+    
+    var promises = []
+    
     memberSvcs.getOne(id)
     .then( function (result) { vm.oneProfile = result.data.data;
-                               vm.loading = false; })
+                               vm.loading = false;
+                               vm.showOne = true; })
     .catch( function (error) { return error; });
-    
-    vm.showOne = false;
     
   };
 
