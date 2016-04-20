@@ -7,6 +7,10 @@ angular
 function config($routeProvider) { 
   $routeProvider
   
+  .when('/', {
+    template: '<landing></landing>'
+  })
+  
   .when('/members', {
     template: '<members-all></members-all>'
   })
