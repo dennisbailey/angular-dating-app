@@ -1,0 +1,22 @@
+<div class="panel-body">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName}}</h2>
+      <h3>City: {{vm.oneProfile.address.city}}</h3>
+      <h3>Age: {{vm.oneProfile.dob | age}}</h3>
+    </div>
+    
+    <div class="col-md-4">
+      <img ng-src="{{vm.oneProfile.avatar}}" alt="{{vm.oneProfile.username}}">
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Company: {{vm.oneProfile.company.name}}<br><em>{{vm.oneProfile.company.catchPhrase | titlecase}}</em></h3>
+      <h3><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h3>
+    </div>
+  </div>
+  
+</div>
