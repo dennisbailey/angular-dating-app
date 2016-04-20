@@ -8,9 +8,12 @@ function MembersCtrl(memberSvcs) {
   var vm = this;
   
   vm.showOne = true;
+  vm.loading = true;
   
   // Popular users are users with more than 1 match
   vm.findPopular = function() {
+    vm.loading = true;
+    
     var popular = [];
             
     vm.all.forEach (function(el) {
@@ -19,10 +22,14 @@ function MembersCtrl(memberSvcs) {
 
     vm.members = popular;
     
+    vm.loading = false;
+    
   };
   
   // Nearby users are within ~200 miles of the user
   vm.findNearby = function() {
+    vm.loading = true;
+    
     var nearby = [];
     
     lat = 39.707401;
@@ -42,11 +49,14 @@ function MembersCtrl(memberSvcs) {
     
     vm.members = nearby;
     
+    vm.loading = false;
   };
   
   // Matches are users that have matched with the user's ID
   vm.findMatches = function() {
-    var userID = '571667945ae850110075ab61'
+    var userID = '571667945ae850110075ab61';
+    
+    vm.loading = true;
     
     var matches = [];
             
@@ -58,21 +68,29 @@ function MembersCtrl(memberSvcs) {
     
     vm.members = matches;
     
+    vm.loading = false;
+    
   };
   
   vm.getOne = function(id) {
+    vm.loading = true;
     memberSvcs.getOne(id)
-    .then( function (result) { vm.oneProfile = result.data.data; })
+    .then( function (result) { vm.oneProfile = result.data.data;
+                               vm.loading = false; })
     .catch( function (error) { return error; });
     
     vm.showOne = false;
+    
   };
 
   vm.getAll = function() {
+    vm.loading = true;
     memberSvcs.getAll()
     .then( function (result) { vm.members = result.data.data; 
-                               vm.all = result.data.data; })
+                               vm.all = result.data.data;
+                               vm.loading = false; })
     .catch( function (error) { return error; });
+    
   };
 
   vm.getAll();
