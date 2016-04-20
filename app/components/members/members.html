@@ -3,26 +3,28 @@
     <div class="col-md-6"
          ng-init="sort = ''; filterParam='' ">
       
-      <a class="btn btn-primary btn-xs" 
-         ng-click="sort = '-_matches.length'"
+      <a class="btn btn-primary btn-sm" 
+         ng-click="vm.findPopular(); sort = '-_matches.length'"
          > Popularity </a>
       
-      <a class="btn btn-primary btn-xs"
+      <a class="btn btn-primary btn-sm"
          ng-click="vm.findNearby();"
          > Nearby </a>
       
-      <a class="btn btn-primary btn-xs"> Matches </a>
+      <a class="btn btn-primary btn-sm"
+         ng-click="vm.findMatches();"
+         > Matches </a>
       
-      <a class="btn btn-primary btn-xs"> Conversations </a>
+      <a class="btn btn-primary btn-sm"> Conversations </a>
       
-      <a class="btn btn-primary btn-xs" 
+      <a class="btn btn-success btn-sm" 
          ng-click="vm.getAll()"
          > Show All </a>
       
       <br><br>
       
       <div class="panel panel-default"
-           ng-repeat="member in vm.members | orderBy: sort ">
+           ng-repeat="member in vm.members track by $index | orderBy: sort">
         
         <profile-short></profile-short>
         
