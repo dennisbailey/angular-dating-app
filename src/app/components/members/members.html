@@ -2,24 +2,12 @@
 <!--   <nav-bar></nav-bar> -->
 
   <div class="row">
-    <div class="col-md-5"> <!-- Start of Column 1 -->
-      
-      <div class="panel panel-default" ng-repeat="member in vm.members">
-        <div class="panel-body">
-          <div class="col-md-4">
-            <img ng-src="{{member.avatar}}" alt="{{member.username}}">
-          </div>
-        
-          <div class="col-md-8">
-            <h4>{{member.username}}</h4>
-            <h4>{{member.gender | genders}}</h4>
-          </div>
-        </div>
-      </div> <!-- End of Panel -->
-    </div> <!-- End of Column 1 -->
+    <div class="col-md-5">
+      <profile-short></profile-short>
+    </div>
     
-    <div class="col-md-7"> <!-- Start of Column 2 -->
-    </div> <!-- End of Column 2 -->
+    <div class="col-md-7">
+    </div>
   </div>
 <!--   <footer></footer> -->
 </div>
