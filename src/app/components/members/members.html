@@ -1,25 +1,45 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <div class="panel panel-default" ng-repeat="member in vm.members">
+      
+      <div class="panel panel-default" 
+           ng-repeat="member in vm.members">
         <div class="panel-body">
           <div class="col-md-4">
             <img ng-src="{{member.avatar}}" alt="{{member.username}}">
           </div>
 
           <div class="col-md-8">
-            <profile-short></profile-short>
-              <h4>{{member.names.firstName}}</h4>
-              <h5>Type: {{member.gender | genders}} | Age: {{member.dob | age}}</h5>
-              <h5>{{member.city}}</h5>
-              <h5><em>{{member.company.bs}}</em></h5>
-              <h5><a href="{{member.website}}">{{member.website}}</a></h5>
+            <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
+            <h4>City: {{member.address.city}}</h4>
+            <h5>Age: {{member.dob | age}}</h5>
+            <h5><em>{{member.company.bs}}</em></h5>
+            <h5><a href="{{member.website}}">{{member.website}}</a></h5>
+            <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
           </div>
         </div>
-      </div> 
+      </div> <!-- End of Panel -->
+       
     </div>
 
     <div class="col-md-7">
+      <div class="panel panel-default" ng-hide="vm.showOne">
+        <div class="panel-body">
+          <div class="col-md-4">
+            <img ng-src="{{vm.oneProfile.avatar}}" alt="{{vm.oneProfile.username}}">
+          </div>
+
+          <div class="col-md-8">
+            <h4>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName}}</h4>
+            <h4>City: {{vm.oneProfile.address.city}}</h4>
+            <h5>Age: {{vm.oneProfile.dob | age}}</h5>
+            <h5><em>{{vm.oneProfile.company.bs}}</em></h5>
+            <h5><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h5>
+          </div>
+        </div>
+      </div> <!-- End of Panel -->
     </div>
-  </div>
+  
+  </div><!-- End of Row -->
+
 </div>
