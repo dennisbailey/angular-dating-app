@@ -13,6 +13,10 @@ function memberSvcs($http) {
    
     getOne : function (id) {
       return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members/'+ id +'');
+    },
+    
+    getAllMatches : function(id) {
+      return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members/'+ id +'/matches')
     }
 
   };
