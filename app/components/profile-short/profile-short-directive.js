@@ -7,7 +7,7 @@
 
 function profileShort() {
   return {
-    require: '^^MembersCtrl',
+    require: '^^MembersAll',
     restrict: 'E',
     templateUrl: 'app/components/profile-short/profile-short.html'
   };
