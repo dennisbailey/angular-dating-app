@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6 scroll">
       
       <div class="panel panel-default" 
            ng-repeat="member in vm.members">
@@ -11,8 +11,6 @@
 
           <div class="col-md-8">
             <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
-            <h4>City: {{member.address.city}}</h4>
-            <h5>Age: {{member.dob | age}}</h5>
             <h5><em>{{member.company.bs}}</em></h5>
             <h5><a href="{{member.website}}">{{member.website}}</a></h5>
             <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
@@ -22,19 +20,26 @@
        
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-6 col-md-offset-6 fixed">
       <div class="panel panel-default" ng-hide="vm.showOne">
         <div class="panel-body">
-          <div class="col-md-4">
-            <img ng-src="{{vm.oneProfile.avatar}}" alt="{{vm.oneProfile.username}}">
+          <div class="row">
+            <div class="col-md-8">
+              <h2>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName}}</h2>
+              <h3>City: {{vm.oneProfile.address.city}}</h3>
+              <h3>Age: {{vm.oneProfile.dob | age}}</h3>
+            </div>
+            
+            <div class="col-md-4">
+              <img ng-src="{{vm.oneProfile.avatar}}" alt="{{vm.oneProfile.username}}">
+            </div>
           </div>
-
-          <div class="col-md-8">
-            <h4>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName}}</h4>
-            <h4>City: {{vm.oneProfile.address.city}}</h4>
-            <h5>Age: {{vm.oneProfile.dob | age}}</h5>
-            <h5><em>{{vm.oneProfile.company.bs}}</em></h5>
-            <h5><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h5>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Company: {{vm.oneProfile.company.name}}<br><em>{{vm.oneProfile.company.bs}}</em></h3>
+              <h3><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h3>
+            </div>
           </div>
         </div>
       </div> <!-- End of Panel -->
