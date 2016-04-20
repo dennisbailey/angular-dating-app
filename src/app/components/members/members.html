@@ -11,8 +11,7 @@
 
           <div class="col-md-8">
             <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
-            <h5><em>{{member.company.bs}}</em></h5>
-            <h5><a href="{{member.website}}">{{member.website}}</a></h5>
+            <h5><em>{{member.company.bs | titlecase}}</em></h5>
             <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
           </div>
         </div>
@@ -37,7 +36,7 @@
           
           <div class="row">
             <div class="col-md-12">
-              <h3>Company: {{vm.oneProfile.company.name}}<br><em>{{vm.oneProfile.company.bs}}</em></h3>
+              <h3>Company: {{vm.oneProfile.company.name}}<br><em>{{vm.oneProfile.company.catchPhrase | titlecase}}</em></h3>
               <h3><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h3>
             </div>
           </div>
