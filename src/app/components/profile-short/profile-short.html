@@ -1,4 +1,4 @@
-<div class="panel-body">
+<div class="panel-body" >
   <div class="col-md-4">
     <img ng-src="{{member.avatar}}" alt="{{member.username}}">
   </div>
@@ -6,6 +6,5 @@
   <div class="col-md-8">
     <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
     <h5><em>{{member.company.bs | titlecase}}</em></h5>
-    <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
   </div>
 </div>

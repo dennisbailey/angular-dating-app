@@ -29,7 +29,8 @@
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default"
-           ng-repeat="member in vm.members track by $index | orderBy: sort">
+           ng-repeat="member in vm.members track by $index | orderBy: sort"
+           ng-click="vm.getOne(member._id)">
         
         <profile-short></profile-short>
         
