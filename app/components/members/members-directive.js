@@ -1,10 +1,10 @@
 (function(){
   'use strict';
-  
+
   angular
   .module('temperamentsApp')
   .directive('membersAll', membersAll);
-  
+
 function membersAll() {
   return {
     restrict: 'E',
@@ -12,6 +12,6 @@ function membersAll() {
     controller: 'MembersCtrl',
     controllerAs: 'vm',
     bindToController: true
-  }
+  };
 }
 })();
