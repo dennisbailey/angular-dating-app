@@ -11,6 +11,11 @@ function memberSvcs($http) {
 
      return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members?limit=10');
 
+   },
+   
+   getOne : function (id) {
+     console.log('im in the service');
+     return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members/'+ id +'');
    }
 
  };

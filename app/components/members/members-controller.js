@@ -6,6 +6,17 @@ MembersCtrl.$inject = ['memberSvcs'];
 
 function MembersCtrl(memberSvcs) {
   var vm = this;
+  
+  vm.showOne = true;
+  
+  vm.getOne = function(id) {
+    console.log('id', id);
+    memberSvcs.getOne(id)
+    .then( function (result) { console.log('show one', result.data.data); vm.oneProfile = result.data.data; })
+    .catch( function (error) { return error; });
+    
+    vm.showOne = false;
+  };
 
   vm.getAll = function() {
     memberSvcs.getAll()
