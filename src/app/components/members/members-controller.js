@@ -14,9 +14,9 @@ function MembersCtrl(memberSvcs) {
     var popular = [];
             
     vm.all.forEach (function(el) {
-      if (el._matches.length > 1) { popular.push(el) }
+      if (el._matches.length > 4) { popular.push(el) }
     })
-    
+
     vm.members = popular;
     
   };
