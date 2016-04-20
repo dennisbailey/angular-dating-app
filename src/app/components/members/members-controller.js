@@ -9,21 +9,32 @@ function MembersCtrl(memberSvcs) {
   
   vm.showOne = true;
   
-  vm.findNearby = function() {
-    lat = 39.707401;
-    lon = -104.968597;
-    
-    vm.maxLat = lat + .145;
-    vm.minLat = lat - .145;
-    vm.maxLon = lon + .145;
-    vm.minLon = lon - .145; 
-  };
+  vm.nearby = []
   
-  vm.filterNearby = function(location) {
-    return (val.age > MIN_AGE && val.age < MAX_AGE);
+  vm.findNearby = function() {
+    console.log('nearby');
+    lat = 39.707401;
+    lng = -104.968597;
+    
+    var maxLat = lat + .145 * 10;
+    var minLat = lat - .145 * 10;
+    var maxLng = lng + .145 * 10;
+    var minLng = lng - .145 * 10; 
+    
+    vm.members.forEach (function(el) {
+      if (el.address.geo.lat > minLat &&
+          el.address.geo.lat < maxLat &&
+          el.address.geo.lng > minLng &&
+          el.address.geo.lng < maxLng )
+          { vm.nearby.push(el) }
+    })
+    
+    vm.members = vm.nearby;
+    
   };
   
   vm.getOne = function(id) {
+    console.log(id);
     memberSvcs.getOne(id)
     .then( function (result) { vm.oneProfile = result.data.data; })
     .catch( function (error) { return error; });
