@@ -8,28 +8,24 @@
          > Popularity </a>
       
       <a class="btn btn-primary btn-xs"
-         ng-click="findNearby();"
+         ng-click="vm.findNearby();"
          > Nearby </a>
       
       <a class="btn btn-primary btn-xs"> Matches </a>
       
       <a class="btn btn-primary btn-xs"> Conversations </a>
       
+      <a class="btn btn-primary btn-xs" 
+         ng-click="vm.getAll()"
+         > Show All </a>
+      
       <br><br>
       
       <div class="panel panel-default"
            ng-repeat="member in vm.members | orderBy: sort ">
-        <div class="panel-body">
-          <div class="col-md-4">
-            <img ng-src="{{member.avatar}}" alt="{{member.username}}">
-          </div>
-
-          <div class="col-md-8">
-            <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
-            <h5><em>{{member.company.bs}}</em></h5>
-            <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
-          </div>
-        </div>
+        
+        <profile-short></profile-short>
+        
       </div> <!-- End of Panel -->
        
     </div>

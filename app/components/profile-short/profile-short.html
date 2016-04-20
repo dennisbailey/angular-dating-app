@@ -1,16 +1,11 @@
-<div class="panel panel-default" ng-repeat="member in vm.members">
-  <div class="panel-body">
-    <div class="col-md-4">
-      <img ng-src="{{member.avatar}}" alt="{{member.username}}">
-    </div>
-  
-    <div class="col-md-8">
-      <profile-short></profile-short>
-        <h4>{{member.names.firstName}}</h4>
-        <h5>Type: {{member.gender | genders}} | Age: {{member.dob | age}}</h5>
-        <h5>{{member.city}}</h5>
-        <h5><em>{{member.company.bs}}</em></h5>
-        <h5><a href="{{member.website}}">{{member.website}}</a></h5>
-    </div>
+<div class="panel-body">
+  <div class="col-md-4">
+    <img ng-src="{{member.avatar}}" alt="{{member.username}}">
   </div>
-</div> 
+
+  <div class="col-md-8">
+    <h4>{{member.gender | genders}} {{member.names.firstName}}</h4>
+    <h5><em>{{member.company.bs}}</em></h5>
+    <button ng-click="vm.getOne(member._id)">{{member.id}} hello!</button>
+  </div>
+</div>

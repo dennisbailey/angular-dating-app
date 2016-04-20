@@ -5,8 +5,8 @@ angular
 memberSvcs.$inject = ['$http'];
 
 function memberSvcs($http) {
-  return {
-    
+  
+  return {  
     getAll : function () {
       return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members?limit=100');
     },
@@ -16,4 +16,5 @@ function memberSvcs($http) {
     }
 
   };
+
 }
