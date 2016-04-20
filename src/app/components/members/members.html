@@ -3,6 +3,9 @@
 
   <div class="row">
     <div class="col-md-5">
+      <ul ng-repeat="member in vm.members">
+        <li>{{member.gender}}</li>
+      </ul>
       <profile-short></profile-short>
     </div>
     
