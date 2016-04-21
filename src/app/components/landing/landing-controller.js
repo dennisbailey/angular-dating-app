@@ -6,7 +6,7 @@ LandingCtrl.$inject = ['$timeout'];
 
 function LandingCtrl($timeout) {
   var vm = this;
-  
+
   vm.testimonials = [
     'Simply the best',
     'Just Do IT!',
@@ -18,7 +18,7 @@ function LandingCtrl($timeout) {
     'Tastes So Good, Cats Ask for It by Name',
     'Ding! You are now free to move about the country'
   ];
-  
+
   vm.users = [
     'Leslie Odom',
     'Christopher Jackson',
@@ -30,26 +30,26 @@ function LandingCtrl($timeout) {
     'Howell Binkley',
     'Jasmine Cephas Jones'
   ];
-  
+
   vm.count = 0;
   vm.user = vm.users[vm.count];
   vm.testimonial = vm.testimonials[vm.count];
-    
+
   vm.changeitup = function () {
     $timeout(function () {
-      
+
       if (vm.count < 8) { vm.count++; }
-                          
-      else { vm.count = 0; };
-             
-      vm.user = vm.users[vm.count]; 
+
+      else { vm.count = 0; }
+
+      vm.user = vm.users[vm.count];
       vm.testimonial = vm.testimonials[vm.count];
-             
+
       vm.changeitup();
-      
+
     }, 1000);
   };
-  
+
   vm.changeitup();
-  
+
 }
