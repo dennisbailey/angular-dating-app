@@ -37,7 +37,6 @@ function LandingCtrl($timeout) {
     
   vm.changeitup = function () {
     $timeout(function () {
-      console.log(vm.count, vm.user, vm.testimonial);
       
       if (vm.count < 8) { vm.count++; }
                           
