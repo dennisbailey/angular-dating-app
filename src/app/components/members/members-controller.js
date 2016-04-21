@@ -55,10 +55,11 @@ function MembersCtrl($rootScope, memberSvcs, authService) {
 
   // Matches are users that have matched with the user's ID
   vm.findMatches = function() {
-    var userID = '571667945ae850110075ab61';
 
     vm.loading = true;
-
+    
+    var userID = JSON.parse(authService.getUserInfo())._id;
+    
     var matches = [];
 
     vm.all.forEach (function(el) {
