@@ -49,7 +49,7 @@ function LandingCtrl($timeout) {
 
     }, 1000);
   };
-
+  
   vm.changeitup();
 
 }

@@ -2,9 +2,9 @@ angular
   .module('temperamentsApp')
   .controller('MembersCtrl', MembersCtrl);
 
-MembersCtrl.$inject = ['memberSvcs'];
+MembersCtrl.$inject = ['$rootScope', 'memberSvcs', 'authService'];
 
-function MembersCtrl(memberSvcs) {
+function MembersCtrl($rootScope, memberSvcs, authService) {
   var vm = this;
 
   vm.showOne = false;
@@ -28,12 +28,13 @@ function MembersCtrl(memberSvcs) {
 
   // Nearby users are within ~200 miles of the user
   vm.findNearby = function() {
+    
     vm.loading = true;
 
     var nearby = [];
 
-    lat = 39.707401;
-    lng = -104.968597;
+    lat = JSON.parse(authService.getUserInfo()).address.geo.lat;
+    lng = JSON.parse(authService.getUserInfo()).address.geo.lng;
 
     var maxLat = lat + 0.145 * 10;
     var minLat = lat - 0.145 * 10;

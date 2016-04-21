@@ -10,11 +10,12 @@ function LoginCtrl($rootScope, $location, authService) {
   vm.user = {};
   
   vm.login = function() {
-    console.log('user', vm.user);
+    
     authService.login(vm.user)
    .then(function(user) { authService.setUserInfo(user);
                           $location.path('/members');
-                          $rootScope.currentUser = authService.getUserInfo(); })
+                          $rootScope.currentUser = JSON.parse(authService.getUserInfo()); 
+                         })
     .catch( function (error) { console.log(error); return error; })
   
   };
