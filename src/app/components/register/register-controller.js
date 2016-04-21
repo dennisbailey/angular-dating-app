@@ -10,7 +10,7 @@ function RegisterCtrl($rootScope, $location, authService) {
   vm.user = {};
   
   vm.register = function() {
-    console.log(vm.user);
+
     authService.register(vm.user)
    .then(function(user) { authService.setRegisterUserInfo(user);
                           $location.path('/members');
