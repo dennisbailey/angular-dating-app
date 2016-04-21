@@ -1,12 +1,16 @@
-<div class="container text-center" style="padding-top: 60px; position: fixed; z-index: 1; background-color: #FFFFFF">
+<div class="container text-center" style="padding-top: 60px; position: fixed; z-index: 1; background-color: #FFFFFF;">
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center"
-         ng-init="sort = ''; 
-                  filterParam=''; ">
+  <div class="row text-center" 
+       ng-hide="vm.loading">
+    
+    <div class="col-md-8 
+                col-md-offset-2 
+                text-center"
+         ng-init="sort = ''">
                     
       <a class="btn btn-primary" 
-         ng-click="vm.findPopular(); sort = '-_matches.length'"
+         ng-click="vm.findPopular(); 
+                   sort = '-_matches.length'"
          > Popular </a>
       
       <a class="btn btn-primary"
@@ -24,19 +28,24 @@
          > Show All </a>
       
       <br><br>
-      <div class="progress progress-striped active" ng-show="vm.loading">
+    </div>
+  </div>
+    
+    <div class="row" ng-show="vm.loading">
+      <div class="progress progress-striped active">
         <div class="progress-bar" style="width: 100%"></div>
       </div>
     </div>
-  </div>
+
 </div>
 
 <div class="container" style="padding-top: 120px; z-index: -1; ">  
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default"
-           ng-repeat="member in vm.members track by $index | orderBy: sort"
-           ng-click="vm.getOne(member._id)">
+           ng-repeat="member in vm.members track by $index | orderBy: sort "
+           ng-click="vm.getOne(member._id)"
+           ng-show="member.active">
         
         <profile-short></profile-short>
         

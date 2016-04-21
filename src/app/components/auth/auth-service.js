@@ -38,7 +38,6 @@ function authService($http, $window) {
     },
     
     setRegisterUserInfo: function(userData) {
-      console.log(userData.data.data.data);
       $window.localStorage.setItem('user', JSON.stringify(userData.data.data.data.email));
       $window.localStorage.setItem('token', JSON.stringify(userData.data.data.token));
     },
