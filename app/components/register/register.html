@@ -1,0 +1,187 @@
+<div class="container">
+
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      
+      <div class="panel-heading">
+        <h3 class="panel-title">Who wants to signup!</h3>
+      </div>
+
+      <div class="panel-body">
+        <form role="form" ng-submit="vm.register()">
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.username" 
+                   class="form-control" 
+                   placeholder="Your username… "
+                   required="">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.names.firstName" 
+                   class="form-control" 
+                   placeholder="Your given name… "
+                   required="">
+          </div>
+<!--
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.names.lastName" 
+                   class="form-control" 
+                   placeholder="Your family name… ">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.avatar" 
+                   class="form-control" 
+                   placeholder="Image URL… ">
+          </div>
+          
+-->
+          <div class="form-group">
+            <input type="email" 
+                   ng-model="vm.user.email" 
+                   class="form-control" 
+                   placeholder="Your email… ">
+          </div>
+          
+          <div class="form-group">
+            <input type="password" 
+                   ng-model="vm.user.password" 
+                   class="form-control" 
+                   placeholder="Your password…"
+                   required="">
+          </div>
+          
+          <div class="form-group">
+            <input type="date" 
+                   ng-model="vm.user.dob" 
+                   class="form-control" 
+                   required="">
+          </div>
+<!--
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.phone" 
+                   class="form-control"
+                   placeholder="Your phone number…">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.address.street"
+                   placeholder="Your street address…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.address.suite"
+                   placeholder="Your suite…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.address.city"
+                   placeholder="Your city…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.address.city"
+                   placeholder="Your city…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.address.zipcode"
+                   placeholder="Your zipcode…" 
+                   class="form-control">
+          </div>
+          
+-->
+          <div class="form-group">
+            <input type="number" 
+                   ng-model="vm.user.address.geo.lat"
+                   placeholder="Your latitude…" 
+                   class="form-control"
+                   required="">
+          </div>
+          
+          <div class="form-group">
+            <input type="number" 
+                   ng-model="vm.user.address.geo.lng"
+                   placeholder="Your longitude…" 
+                   class="form-control"
+                   required="">
+          </div>
+<!--
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.website"
+                   placeholder="Your website…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.company.name"
+                   placeholder="Your company's name…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.company.catchPhrase"
+                   placeholder="Your company's name…" 
+                   class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.company.bs"
+                   placeholder="Your company's horse hockey…" 
+                   class="form-control">
+          </div>
+          
+-->
+          <div class="form-group">
+            <input type="text" 
+                   ng-model="vm.user.slug"
+                   placeholder="Your preferred slug…" 
+                   class="form-control"
+                   required="">
+          </div>
+<!--
+          
+          <div class="form-group">
+            <input type="number" 
+                   ng-model="vm.user.gender"
+                   min="0" 
+                   max="3"
+                   class="form-control">
+          </div>
+    
+-->
+          <button type="submit" class="btn btn-lg btn-success btn-block">Sign Up Now</button>
+        
+        </form>
+      </div>
+    
+      <div class="panel-footer">
+        <a href="mailto:michael@mherman.org">Forgot something? »</a>
+      </div>
+    
+    </div> <!-- End of Panel -->
+  </div> <!-- End of column -->
+
+</div>
