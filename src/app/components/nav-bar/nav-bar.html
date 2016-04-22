@@ -6,10 +6,11 @@
       <li ng-show="loggedIn"><a href='#/members'> Members </a></li>
       <li ng-show="loggedIn"><a href='#/search'> Search </a></li>
       <li ng-show="loggedIn"><a href='#/profile/'> My Profile </a></li>
-      <li ng-show="loggedIn"><a href='#/logout'> Logout </a></li>
     </ul>
     <ul class="nav navbar-nav pull-right">
       <li ng-hide="loggedIn"><a href='#/login'> Login </a></li>
+      <li ng-show="loggedIn"><a href='#/logout'> Logout </a></li>
+      <li ng-hide="loggedIn"><a href='#/register'> Register </a></li>
     </ul>
     
    </div>
