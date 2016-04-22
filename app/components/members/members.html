@@ -1,6 +1,7 @@
-<div class="container text-center" style="padding-top: 60px; position: fixed; z-index: 1; background-color: #FFFFFF;">
+<div class="container text-center" style="position: fixed; z-index: 1; width: 100%; background-color: #FFFFFF; box-shadow: 0px 5px 5px 0px rgba(85,85,85,0.2);">
 
-  <div class="row text-center" 
+  <div class="row text-center"
+       style="width: 90%; margin: auto;"
        ng-hide="vm.loading">
     
     <div class="col-md-8 
@@ -11,20 +12,24 @@
       <a class="btn btn-primary" 
          ng-click="vm.findPopular(); 
                    sort = '-_matches.length'"
+         style="margin-top: 18px;"
          > Popular </a>
       
       <a class="btn btn-primary"
          ng-click="vm.findNearby();"
+         style="margin-top: 18px;"
          > Nearby </a>
       
       <a class="btn btn-primary"
          ng-click="vm.findMatches();"
+         style="margin-top: 18px;"
          > Matches </a>
       
-      <a class="btn btn-primary"> Conversations </a>
+      <a class="btn btn-primary" style="margin-top: 18px;"> Conversations </a>
       
       <a class="btn btn-success" 
          ng-click="vm.getAll()"
+         style="margin-top: 18px;"
          > Show All </a>
       
       <br><br>
@@ -32,14 +37,16 @@
   </div>
     
     <div class="row" ng-show="vm.loading">
-      <div class="progress progress-striped active">
-        <div class="progress-bar" style="width: 100%"></div>
+      <div class="col-md-10 col-md-offset-1">
+      <div class="progress progress-striped active" style="margin-top: 18px;">
+        <div class="progress-bar" style="width: 100%;"></div>
+      </div>
       </div>
     </div>
 
 </div>
 
-<div class="container" style="padding-top: 120px; z-index: -1; ">  
+<div class="container" style="padding-top: 88px; z-index: -1; ">  
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default"
