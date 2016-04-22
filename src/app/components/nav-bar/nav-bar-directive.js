@@ -8,7 +8,7 @@
 function navBar() {
   return {
     restrict: 'E',
-    templateUrl: 'app/components/nav-bar/nav-bar.html'  
+    templateUrl: 'app/components/nav-bar/nav-bar.html'
   };
 }
 })();
