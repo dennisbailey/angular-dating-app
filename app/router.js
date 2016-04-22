@@ -41,11 +41,19 @@ function config($routeProvider) {
     restricted: false,
     preventLoggedIn: true
   })
+  
+  .when('/profile', {
+    template: '<profile></profile>',
+    restricted: true,
+    preventLoggedIn: false
+  })
 
-//     .when('/profile', {
-//       template: '<profile></profile>'
-//     })
-//
+  .when('/profile/:id', {
+    template: '<profile></profile>',
+    restricted: true,
+    preventLoggedIn: false
+  })
+
   .otherwise({
     redirectTo: '/'
   });
