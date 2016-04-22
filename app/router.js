@@ -18,6 +18,17 @@ function config($routeProvider) {
     restricted: false,
     preventLoggedIn: true
   })
+  
+  .when('/logout', {
+    restricted: false,
+    preventLoggedIn: false,
+    resolve: {
+      goodbye: function(authService, $location) {
+                  authService.logout();
+                  $location.path('/'); 
+               }
+            }
+  })
 
   .when('/members', {
     template: '<members-all></members-all>',
