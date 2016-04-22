@@ -1,0 +1,37 @@
+<div class="container">
+<div class="panel-body" style="padding-top: 60px;">
+  <div class="row">
+    <div class="col-md-9">
+      <h2>Just the Facts</h2>
+      <h3>Hello! My name is <strong>{{vm.profile.names.firstName | titlecase }} {{vm.profile.names.lastName | titlecase }}</strong>, but you can call me <strong>{{vm.profile.username}}</strong>. (Mr. {{vm.profile.username}} was my father.)</h3>
+      <h3>I like long walks on the beach, puppies, and I'm a <strong>{{vm.profile.gender | genders}}</strong> </h3> 
+      <h3>I live in {{vm.profile.address.city}} and I'm {{vm.profile.dob | age}} years young.</h3>
+      <h3>You can find me on the interwebs at <a href="{{vm.profile.website}}">{{vm.profile.website}}</a></h3>
+    </div>
+    
+    <div class="col-md-3">
+      <img ng-src="{{vm.profile.avatar}}" alt="{{vm.profile.username}}">
+      <h3>My preferred types</h3>
+      <ul ng-repeat="type in vm.profile.interestedIn">
+        <li><h4>{{type | genders}}</h4></li>
+      </ul>
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Who Am I?</h2>
+      <p>{{vm.profile.description}}</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h2>What Am I doing With My Life?</h2>
+      <h4>I work for {{vm.profile.company.name}} and we're all about {{vm.profile.company.catchPhrase | titlecase}} and {{vm.profile.company.bs | titlecase}}. Pretty cool, huh?</h4>
+    </div>
+  </div>
+
+</div>  
+</div>

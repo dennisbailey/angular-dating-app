@@ -1,7 +1,7 @@
 <div class="panel-body">
   <div class="row">
     <div class="col-md-8">
-      <h2><strong>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName}}</strong></h2>
+      <h2><strong>{{vm.oneProfile.gender | genders}} {{vm.oneProfile.names.firstName | titlecase }}</strong></h2>
       <h3>City: {{vm.oneProfile.address.city}}</h3>
       <h3>Age: {{vm.oneProfile.dob | age}}</h3>
     </div>
@@ -16,6 +16,7 @@
     <div class="col-md-12">
       <h3>Company: {{vm.oneProfile.company.name}}<br><em>{{vm.oneProfile.company.catchPhrase | titlecase}}</em></h3>
       <h3><a href="{{member.website}}">{{vm.oneProfile.website}}</a></h3>
+      <a href="/#/profile/{{vm.oneProfile._id}}" class="btn btn-info pull-right">View Full Profile</a>
     </div>
   </div>
   
