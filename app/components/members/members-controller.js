@@ -87,6 +87,8 @@ function MembersCtrl($rootScope, memberSvcs, authService) {
 
   vm.getAll = function() {
     vm.loading = true;
+    $rootScope.loggedIn = true;
+
     memberSvcs.getAll()
     .then( function (result) { vm.members = result.data.data;
                                vm.all = result.data.data;
