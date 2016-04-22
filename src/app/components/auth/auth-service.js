@@ -11,9 +11,9 @@ angular
   .module('temperamentsApp')
   .service('authService', authService);
 
-authService.$inject = ['$http', '$window'];
+authService.$inject = ['$http', '$window', '$rootScope'];
 
-function authService($http, $window) {
+function authService($http, $window, $rootScope) {
   
   var user = {};
   
@@ -26,6 +26,7 @@ function authService($http, $window) {
     logout: function(user) {
       user = null;
       $window.localStorage.clear();
+      $rootScope.loggedIn = false;
     },
   
     register: function(user) {
