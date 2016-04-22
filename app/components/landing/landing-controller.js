@@ -2,9 +2,9 @@ angular
   .module('temperamentsApp')
   .controller('LandingCtrl', LandingCtrl);
 
-LandingCtrl.$inject = ['$timeout'];
+LandingCtrl.$inject = ['$timeout', '$window', '$rootScope'];
 
-function LandingCtrl($timeout) {
+function LandingCtrl($timeout, $window, $rootScope) {
   var vm = this;
 
   vm.testimonials = [
@@ -36,6 +36,8 @@ function LandingCtrl($timeout) {
   vm.testimonial = vm.testimonials[vm.count];
 
   vm.changeitup = function () {
+    var token = $window.localStorage.getItem('token');
+    if (token) {$rootScope.loggedIn = true;}
     $timeout(function () {
 
       if (vm.count < 8) { vm.count++; }
